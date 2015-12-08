@@ -2,5 +2,13 @@
 <h3><%= @project.owner %></h3>
 <p><%= @project.description %></p>
 
+<% @comments.each do |user_comment| %>
+	<p>
+		<%= user_comment.body_text %> <br>
+		Written By:
+		<%= user_comment.user %>
+	</p>
+<% end %>
+
 <%= render partial: 'form' %>
 

@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   def show
   	@project = Project.find(params[:id])
-  	@comment = Comment.new(user: current_user, project: @project)
+  	# @comment = Comment.new(user: current_user, project: @project)
   end
 
 	private

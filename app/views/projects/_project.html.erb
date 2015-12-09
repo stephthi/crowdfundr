@@ -1,6 +1,6 @@
 <!-- basic render of a project -->
 <div class="project">
-	<p><%=project.title%></p>
+	<p><%= link_to project.title, project_path(project), class: "project-link" %></p>
 	<p>Description: <%= project.description%></p>
 	<p>Start Date: <%= project.start_date%></p>
   <p>End Date: <%=project.end_date%></p>

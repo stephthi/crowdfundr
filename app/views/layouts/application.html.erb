@@ -24,11 +24,11 @@
 	<% end %>
 </p>
 
-<h1>Crowdfundr</h1>
+<h1 id="crowdfundr">Crowdfundr</h1>
 <div>
-	<a href="/projects">Browse Projects</a>
-	<a href="/projects/new">Get Funded</a>
-	<% if current_user %><a href="/users/<%= current_user.id %>" >User Page</a> <% end %>
+	<a href="/projects"><button type="button">Browse Projects</button></a>
+	<a href="/projects/new"><button type="button">Get Funded</button></a>
+	<% if current_user %><a href="/users/<%= current_user.id %>" ><button type="button">User Page</button></a> <% end %>
 </div>
 
 

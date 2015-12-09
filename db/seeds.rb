@@ -5,8 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-default_user_one = User.create(username: "Tony Default", email: "default@example.com")
-default_user_two = User.create(username: "Krumbopulous Michael", email: "killer@krumbopulous.com")
+default_user_one = User.create(
+	username: "Tony Default",
+	email: "default@example.com",
+	password: "defaultpassword",
+	password_confirmation: "defaultpassword")
+
+default_user_two = User.create(
+	username: "Krumbopulous Michael",
+	email: "killer@krumbopulous.com",
+	password: "antimatter",
+	password_confirmation: "antimatter")
 
 default_project_one = Project.create(
 	title: "Sushi Cat",
@@ -41,8 +50,7 @@ Reward.create(
 default_pledge_one = Pledge.create(
 	dollar_amount: 100,
 	project_id: default_project_two.id,
-	user_id: default_user_two.id,
-	reward_id: default_project_two.rewards[0].id)
+	user_id: default_user_two.id)
 
 Comment.create(
 	body_text: "Hi, I'm Krumbopulous Michael, I'm an assassin. I love plumbuses for their raw killing power. Hoo wee, you can't go better than a plumbus!",

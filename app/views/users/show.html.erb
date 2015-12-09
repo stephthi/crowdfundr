@@ -6,15 +6,15 @@
 	<h3>List of Pledged Projects</h3>
 
 	<% current_user.pledged_projects.each do |project| %>
-		<%= project.name %>
+		<%= link_to project.title, project_path(project) %>
 	<% end %>
 </div>
 
 <div>
-	<h3>List of Projects</h3>
+	<h3>List of Owned Projects</h3>
 
 	<% current_user.owned_projects.each do |project| %>
-		<%= project.title %>
+		<%= link_to project.title, project_path(project) %>
 	<% end %>
 </div>
 

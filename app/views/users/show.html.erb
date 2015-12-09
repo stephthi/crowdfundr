@@ -1,7 +1,22 @@
-<h1 class="userinfo">
-	<%= @user.username%></h1>
+<h1 class="userinfo"><%= @user.username%></h1>
 
 <h4>Email: <%= @user.email%> </h4>
+
+<div>
+	<h3>List of Pledged Projects</h3>
+
+	<% current_user.pledged_projects.each do |project| %>
+		<%= project.name %>
+	<% end %>
+</div>
+
+<div>
+	<h3>List of Projects</h3>
+
+	<% current_user.owned_projects.each do |project| %>
+		<%= project.title %>
+	<% end %>
+</div>
 
 
 <p><%= link_to 'Back', projects_path %></p>

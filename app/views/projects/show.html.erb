@@ -11,7 +11,7 @@
 
 
 <% @project.comments.each do |comment| %>
-	<% comment_user = comment.user %>
+	<% comment_user = comment.user.username %>
 	<p> <%= comment_user %> Says:
-	<%= comment %> </p>
+	<%= comment.body_text %> </p>
 <% end %>

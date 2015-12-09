@@ -1,7 +1,16 @@
 class ProjectsController < ApplicationController
 
 	def index
-		@projects = Project.all
+		if params[:title]
+			@projects = Project.where("LOWER(title) LIKE LOWER(?)", "%#{params[:title]}%")
+		else
+			@projects = Project.all
+		end
+
+		respond_to do |format|
+      format.html
+      format.js
+    end
 	end
 
 	def new

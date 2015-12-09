@@ -1,7 +1,9 @@
 <h1 class = "project-name"><%= @project.title %></h1>
 <h3 class = "project_owner"><%= @project.owner.username if @project.owner %></h3>
-<p class = "project-description"><%= @project.description %></p>
-
-
-
-
+<p class = "project-description">
+	<%= @project.description %><br>
+	Project Started On:
+	<%= @project.start_date.strftime("%b %d, %Y") %><br>
+	Project Ends On:
+	<%= @project.end_date.strftime("%b %d, %Y") %>
+</p>

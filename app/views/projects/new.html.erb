@@ -13,8 +13,7 @@
     <%= f.number_field :funding_target%>
   </div>
   <div>
-    <%= f.label :start_date %>
-    <%= f.date_field :start_date%>
+     <%= f.hidden_field :start_date, :value => Time.new%>
   </div>
   <div>
     <%= f.label :end_date %>

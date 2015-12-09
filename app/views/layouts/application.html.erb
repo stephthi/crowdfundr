@@ -28,7 +28,7 @@
 <div>
 	<a href="/projects">Browse Projects</a>
 	<a href="/projects/new">Get Funded</a>
-	<a href="/users/<%= current_user.id %>" >User Page</a>
+	<% if current_user %><a href="/users/<%= current_user.id %>" >User Page</a> <% end %>
 </div>
 
 

@@ -14,6 +14,14 @@ class PledgesController < ApplicationController
 		end
 	end
 
+	def new
+		@pledge = Pledge.new
+	end
+
+	def index
+		@pledges = Pledge.all
+	end
+
 	private
 	def pledge_params
 		params.require(:pledge).permit(:dollar_amount, :project_id)

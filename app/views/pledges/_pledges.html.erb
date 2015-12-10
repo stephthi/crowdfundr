@@ -1,4 +1,4 @@
-<%= @project.pledges.each do |f| %>
+<%= form_for @pledges do |f| %>
 	<div class="pledges">
 		<%= f.label :dollar_amount %>
     <%= f.number_field :dollar_amount %>

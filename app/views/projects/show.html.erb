@@ -26,7 +26,9 @@
 
 
 <% @project.pledges.each do |pledge|%>
-	<p><%= pledge.dollar_amount %></p>
+	<% if pledge.dollar_amount != nil %>
+	<p>$<%= pledge.dollar_amount %>.00</p>
+	<% end %>
 <% end %>
 
 <h3>Comments:</h3>

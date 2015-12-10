@@ -1,6 +1,8 @@
+<h3>Submit A Pledge</h3>
+
 <%= form_for @pledge do |f| %>
 	<div class="pledges">
-		<%= f.label :dollar_amount %>
+		<%= f.label :dollar_amount, "Dollar Amount $" %>
     <%= f.number_field :dollar_amount %>
 
     <%= f.hidden_field :project_id %>

@@ -1,21 +1,23 @@
 class CommentsController < ApplicationController
-	def index
-		@comments = Comment.all
-	end
+
+	before_filter :ensure_logged_in , only: [:create, :destroy]
+	before_filter :load_project
 
 	def show
 		@comment = Comment.find(params[:id])
 	end
 
 	def create
-		@comment = Comment.new(comment_params)
+		@comment = @project.comments.build(comment_params)
 		@comment.user = current_user
 
 		if @comment.save
-			redirect_to project_url(@comment.project), notice: "Your comment as been saved"
+			redirect_to project_url(@project), notice: "Your comment has been saved"
 		else
-			redirect_to project_url(@comment.project), notice: "Your comment was not saved please try again."
+			render 'projects/show'
 		end
+
+
 	end
 
 	def destroy
@@ -29,6 +31,10 @@ class CommentsController < ApplicationController
 	private
 
 		def comment_params
-			params.require(:comment).permit(:user_id, :comment_id)
+			params.require(:comment).permit(:user_id, :comment_id, :body_text, :project_id)
+		end
+
+		def load_project
+			@project = Project.find(params[:project_id])
 		end
 end

@@ -15,13 +15,8 @@
 	<div class="skill-bar-percent"><%= @project.funding_percent %></div>
 </div>
 
+
 <p class = "project-description">Description: <%= @project.description %></p>
->>>>>>> 342fba3e81ad0d03cd1c23fccc21c8c0be4764be
-<% @project.comments.each do |comment| %>
-	<% comment_user = comment.user.username %>
-	<p> <%= comment_user %> Says:
-	<%= comment.body_text %> </p>
-<% end %>
 
 <%=render :partial => '/pledges/pledges' %>
 
@@ -30,4 +25,12 @@
 
 <% @project.pledges.each do |pledge|%>
 	<p><%= pledge.dollar_amount %></p>
+<% end %>
+
+<%= render partial: 'comments/comment_form' %>
+
+<% @project.comments.each do |comment| %>
+	<% comment_user = comment.user.username %>
+	<p> <%= comment_user %> Says:
+	<%= comment.body_text %> </p>
 <% end %>

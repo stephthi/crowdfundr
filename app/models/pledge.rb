@@ -13,7 +13,7 @@ class Pledge < ActiveRecord::Base
 	#
 
 	def set_reward
-		rewards = self.project.rewards.select{|reward| reward.quantity > 0 }.sort_by(&:min_dollar_amount)
+		rewards = self.project.rewards.select{|reward| reward.current_quantity > 0 }.sort_by(&:min_dollar_amount)
 		rewards.each do |reward|
 			if self.dollar_amount >= reward.min_dollar_amount
 				self.reward = reward

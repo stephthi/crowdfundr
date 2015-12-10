@@ -1,6 +1,9 @@
-<h1 class="userinfo"><%= @user.username%></h1>
+<div>
+	<h1 class="userinfo"><%= @user.username%>'s Account</h1>
+		<p class="sub-info">A list of your activity on Crowdfundr.</p>
+</div>
 
-<h4>Email: <%= @user.email%> </h4>
+<br>
 
 <div>
 	<h3>List of Pledged Projects</h3>
@@ -18,5 +21,7 @@
 	<% end %>
 </div>
 
+<br>
+<br>
+<br>
 
-<p><%= link_to 'Back', projects_path %></p>

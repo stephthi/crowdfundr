@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
 	has_many :commenting_users, through: :comments, :source => :user
 
 	has_many :rewards
+	accepts_nested_attributes_for :rewards, reject_if: :all_blank, allow_destroy: true
 
 	belongs_to :owner, :class_name => "User"
 
@@ -14,4 +15,14 @@ class Project < ActiveRecord::Base
 	#validates :start_date, numericality: {greater_than_or_equal_to: Time.now.beginning_of_minute}
 	#validates :end_date, numericality: {greater_than: :start_date}
 	validates :funding_target, numericality: {greater_than: 0}
+
+	def funding_percent
+		current_funding = 0.0
+		self.pledges.each do |pledge|
+			current_funding += pledge.dollar_amount if pledge.dollar_amount
+		end
+
+		funding_percent = (current_funding / self.funding_target * 100).round(2)
+		"#{funding_percent}%"
+	end
 end

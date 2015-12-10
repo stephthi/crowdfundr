@@ -1,3 +1,7 @@
+* {
+
+}
+
 html {
 	font-family: Arial;
 }
@@ -13,6 +17,16 @@ a:link {
 
 .sub-info {
 	font-size: 0.75em;
+}
+
+#navigation-bar {
+  margin-left: 1%;
+}
+
+.userinfo {
+  display: inline;
+  float: right;
+  margin-right: 1%;
 }
 
 //  FOOTER

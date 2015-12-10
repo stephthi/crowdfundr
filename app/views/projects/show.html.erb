@@ -1,22 +1,24 @@
-<h1 class = "project-name"><%= @project.title %></h1>
+<div class="center">
+	<h1 id="project-name"><%= @project.title %></h1>
 
 <h3 class = "project_owner">Project Owner: <%= link_to "#{@project.owner.username if @project.owner}", user_path(current_user) %></h3>
-<p class = "project-description">
-	<%= @project.description %><br>
-	Project Started On:
-	<%= @project.start_date.strftime("%b %d, %Y") %><br>
-	Project Ends On:
-	<%= @project.end_date.strftime("%b %d, %Y") %>
-</p>
+</div>
+
+<div class="infoblock">
+	<ul>
+		<li><p class="bold">Description:</p> <%= @project.description %></li>
+		<li><p class="bold">Project Started On:</p>
+	<%= @project.start_date.strftime("%b. %d, %Y") %></li>
+		<li><p class="bold">Project Ends On:</p>
+	<%= @project.end_date.strftime("%b. %d, %Y") %></li>
+	</ul>
+</div>
 
 <div class="skillbar clearfix " data-percent=<%= @project.funding_percent %>>
 	<div class="skillbar-title" style="background: #27ae60;"><span>Funding</span></div>
 	<div class="skillbar-bar" style="background: #2ecc71;"></div>
 	<div class="skill-bar-percent"><%= @project.funding_percent %></div>
 </div>
-
-
-<p class = "project-description">Description: <%= @project.description %></p>
 
 <%=render :partial => '/pledges/pledges' %>
 
@@ -27,10 +29,14 @@
 	<p><%= pledge.dollar_amount %></p>
 <% end %>
 
-<%= render partial: 'comments/comment_form' %>
+<h3>Comments:</h3>
 
-<% @project.comments.each do |comment| %>
-	<% comment_user = comment.user.username %>
-	<p> <%= comment_user %> Says:
-	<%= comment.body_text %> </p>
+<ul>
+	<% @project.comments.each do |comment| %>
+	<li><% comment_user = comment.user.username %>
+	<p class="bold"> <%= comment_user %> Says:</p>
+	<%= comment.body_text %></li>
 <% end %>
+</ul>
+
+<%= render partial: 'comments/comment_form' %>

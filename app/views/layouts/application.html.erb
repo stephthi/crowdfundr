@@ -11,29 +11,32 @@
 </head>
 <body>
 
-	<% if flash[:notice] %>
-		<p id="notice"><%= flash[:notice] %></p>
-	<% end %>
-	<% if flash[:alert] %>
-		<p id="alert"><%= flash[:alert] %></p>
-	<% end %>
+<div id="navigation-bar">
+  <a href="/projects"><button type="button">Browse Projects</button></a>
+  <a href="/projects/new"><button type="button">Get Funded</button></a>
+  <% if current_user %><a href="/users/<%= current_user.id %>" ><button type="button">User Page</button></a> <% end %>
 
 <p class="userinfo">
-	<% if current_user %>
-		Signed in as: <%= current_user.username.capitalize %>
-		<%= link_to "Log Out", session_path("current"), :method => :delete %>
-		<% else %>
-		<%= link_to "Log In", new_session_path %> or <%= link_to "Sign Up", new_user_path %>
-	<% end %>
+  <% if current_user %>
+    Signed in as: <%= current_user.username.capitalize %>
+    <%= link_to "Log Out", session_path("current"), :method => :delete %>
+    <% else %>
+    <%= link_to "Log In", new_session_path %> or <%= link_to "Sign Up", new_user_path %>
+  <% end %>
 </p>
 
-<h1 id="crowdfundr">Crowdfundr</h1>
-<div>
-	<a href="/projects"><button type="button">Browse Projects</button></a>
-	<a href="/projects/new"><button type="button">Get Funded</button></a>
-	<% if current_user %><a href="/users/<%= current_user.id %>" ><button type="button">User Page</button></a> <% end %>
 </div>
 
+
+
+<h1 id="crowdfundr">Crowdfundr</h1>
+
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p id="alert"><%= flash[:alert] %></p>
+  <% end %>
 
 <br>
 <%= yield %>

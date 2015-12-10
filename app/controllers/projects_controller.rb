@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
 
 	def show
   	@project = Project.find(params[:id])
+    @pledge = @project.pledges.build
   end
 
 	def new
@@ -28,6 +29,8 @@ class ProjectsController < ApplicationController
 
     if @project.save
       redirect_to projects_url
+    else
+    	render :new
     end
   end
 

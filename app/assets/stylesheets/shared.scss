@@ -6,6 +6,30 @@ html {
 	font-family: Arial;
 }
 
+//  NAVIGATION BAR
+
+.nav-button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  // text-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1em;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background: #3cb0fd;
+  color: #c6e9f2;
+  text-decoration: none;
+}
+
+
+// PAGE
+
 #crowdfundr {
 	color: #01cbfd;
 	text-align: center;
@@ -15,12 +39,29 @@ a:link {
 	text-decoration: none;
 }
 
+a:link:hover {
+  text-decoration: none;
+}
+
+.userinfo a {
+  color: #000506;
+}
+
 .sub-info {
 	font-size: 0.75em;
 }
 
 #navigation-bar {
-  margin-left: 1%;
+  background-color: #3498db;
+  height: 2.5em;
+  color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#nav-buttons {
+  margin-left: 0.5%;
+  display: inline;
 }
 
 .userinfo {

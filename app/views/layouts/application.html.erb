@@ -12,9 +12,11 @@
 <body>
 
 <div id="navigation-bar">
-  <a href="/projects"><button type="button">Browse Projects</button></a>
-  <a href="/projects/new"><button type="button">Get Funded</button></a>
-  <% if current_user %><a href="/users/<%= current_user.id %>" ><button type="button">User Page</button></a> <% end %>
+  <div id="nav-buttons">
+    <a href="/projects" class="nav-button">Browse Projects</a>
+    <a href="/projects/new" class="nav-button">Get Funded</a>
+    <% if current_user %><a href="/users/<%= current_user.id %>" class="nav-button">User Page</a> <% end %>
+  </div>
 
 <p class="userinfo">
   <% if current_user %>

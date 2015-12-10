@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users
 
   resources :sessions
+
+  resources :pledges, only: [:index, :show, :create, :update, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -14,4 +14,12 @@ class Project < ActiveRecord::Base
 	#validates :start_date, numericality: {greater_than_or_equal_to: Time.now.beginning_of_minute}
 	#validates :end_date, numericality: {greater_than: :start_date}
 	validates :funding_target, numericality: {greater_than: 0}
+
+	def funding_percent
+		current_funding = 0.0
+		self.pledges.each{|pledge| current_funding += pledge.dollar_amount}
+
+		funding_percent = (current_funding / self.funding_target * 100).round(2)
+		"#{funding_percent}%"
+	end
 end

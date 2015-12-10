@@ -1,5 +1,12 @@
 <h1 class = "project-name"><%= @project.title %></h1>
 <p class = "project_owner">Project Owner: <%= @project.owner.username if @project.owner %></h3>
+
+<div class="skillbar clearfix " data-percent=<%= @project.funding_percent %>>
+	<div class="skillbar-title" style="background: #27ae60;"><span>Funding</span></div>
+	<div class="skillbar-bar" style="background: #2ecc71;"></div>
+	<div class="skill-bar-percent"><%= @project.funding_percent %></div>
+</div>
+
 <p class = "project-description">Description: <%= @project.description %></p>
 
 

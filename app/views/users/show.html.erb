@@ -21,6 +21,14 @@
 	<% end %>
 </div>
 
+<div>
+	<h3>List of Rewards</h3>
+
+	<% current_user.rewards.each do |reward| %>
+		<%= link_to reward.name, project_path(reward.project) %>
+	<% end %>
+</div>
+
 <br>
 <br>
 <br>

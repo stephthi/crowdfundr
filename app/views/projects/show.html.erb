@@ -3,3 +3,8 @@
 <p class = "project-description">Description: <%= @project.description %></p>
 
 <%=render :partial => '/pledges/pledges' %>
+
+ <p>Pledges:</p>
+ <p><% @project.pledges.each do |pledge|%>
+ 		<%= pledge.dollar_amount %>
+ <% end %></p>

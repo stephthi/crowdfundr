@@ -15,11 +15,11 @@ class ProjectsController < ApplicationController
 
 	def show
   	@project = Project.find(params[:id])
-  	# @comment = Comment.new(user: current_user, project: @project)
   end
 
 	def new
 		@project = Project.new
+		@project.rewards.build
 	end
 
   def create
@@ -33,6 +33,7 @@ class ProjectsController < ApplicationController
 
 	private
 	def project_params
-		params.require(:project).permit(:title, :description, :funding_target, :start_date, :end_date)
+		params.require(:project).permit(:title, :description, :funding_target, :start_date, :end_date,
+			rewards_attributes: [:id, :name, :description, :min_dollar_amount, :quantity, :project_id, :_destroy])
   end
 end

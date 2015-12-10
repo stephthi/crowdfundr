@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 	has_many :comments
 	has_many :pledges
 
+	has_many :rewards, through: :pledges
 	has_many :pledged_projects, through: :pledges, :source => :project
 	has_many :owned_projects, :class_name => "Project", :foreign_key => :owner_id
 

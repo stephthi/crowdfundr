@@ -2,8 +2,8 @@ class PledgesController < ApplicationController
 
 	def create
     @pledge = Pledge.new(pledge_params)
-    @pledge.user_id = current_user.id
-
+    @pledge.user = current_user
+    @pledge.set_reward
 
     if @pledge.save
       redirect_to project_path(@pledge.project), notice: "Thank you for the generous pledge."

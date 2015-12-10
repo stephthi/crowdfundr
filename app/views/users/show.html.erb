@@ -8,7 +8,7 @@
 <div>
 	<h3>List of Pledged Projects</h3>
 
-	<% current_user.pledged_projects.each do |project| %>
+	<% current_user.pledged_projects.uniq.each do |project| %>
 		<%= link_to project.title, project_path(project) %>
 	<% end %>
 </div>
@@ -16,8 +16,16 @@
 <div>
 	<h3>List of Owned Projects</h3>
 
-	<% current_user.owned_projects.each do |project| %>
+	<% current_user.owned_projects.uniq.each do |project| %>
 		<%= link_to project.title, project_path(project) %>
+	<% end %>
+</div>
+
+<div>
+	<h3>List of Rewards</h3>
+
+	<% current_user.rewards.uniq.each do |reward| %>
+		<%= link_to reward.name, project_path(reward.project) %>
 	<% end %>
 </div>
 

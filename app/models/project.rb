@@ -17,7 +17,9 @@ class Project < ActiveRecord::Base
 
 	def funding_percent
 		current_funding = 0.0
-		self.pledges.each{|pledge| current_funding += pledge.dollar_amount}
+		self.pledges.each do |pledge|
+			current_funding += pledge.dollar_amount if pledge.dollar_amount
+		end
 
 		funding_percent = (current_funding / self.funding_target * 100).round(2)
 		"#{funding_percent}%"

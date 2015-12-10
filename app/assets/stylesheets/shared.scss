@@ -3,7 +3,8 @@ html {
 }
 
 #crowdfundr {
-	color: #0B3861;
+	color: #01cbfd;
+	text-align: center;
 }
 
 a:link {
@@ -13,3 +14,27 @@ a:link {
 .sub-info {
 	font-size: 0.75em;
 }
+
+//  FOOTER
+
+footer
+  {
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+  }
+
+ #footer
+  {
+    position: relative;
+    text-align: center;
+  }
+
+  #footer header h2
+  {
+    color: #01cbfd !important;
+  }
+
+  #footer header .byline
+  {
+    color: #01cbfd;
+  }

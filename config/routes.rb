@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   root 'projects#index'
 
   resources :projects
-
   resources :users
-
   resources :sessions
+  resources :projects do
+    resources :comments, only: [:show, :create, :destroy]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

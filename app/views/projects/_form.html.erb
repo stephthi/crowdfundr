@@ -1,0 +1,16 @@
+
+<% if current_user %>
+
+	<%= form_for [@project, @comment]  do |f| %>
+
+	  <div>
+	    <%= f.label :comment %>
+	    <%= f.text_area :body_text%>
+
+
+	  </div>
+
+	  <%= f.submit "Comment"%>
+
+	 <% end %>
+<% end%>

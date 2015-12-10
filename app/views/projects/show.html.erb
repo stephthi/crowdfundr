@@ -12,9 +12,7 @@
 <%=render :partial => '/pledges/pledges' %>
 
 <h3>Pledges:</h3>
- 	<p>
- 		<% @project.pledges.each do |pledge|%>
- 			<%= pledge.dollar_amount %>
-	</p>
 
-	<% end %>
+<% @project.pledges.each do |pledge|%>
+	<p><%= pledge.dollar_amount %></p>
+<% end %>

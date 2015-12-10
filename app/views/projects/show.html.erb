@@ -36,6 +36,7 @@
 		<ul>
 		<% @project.rewards.each do |reward| %>
 			<li><p class="bold">Reward:</p> <%= reward.name %> (<%= reward.current_quantity %> of <%= reward.quantity %> left)</li>
+			<li><p class="bold">Minimum Pledge:<p> $<%= reward.min_dollar_amount %>.00</li>
 			<li><p class="bold">Description:</p> <%= reward.description %></li>
 			<li>------------------</li>
 		<% end %>

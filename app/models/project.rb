@@ -25,4 +25,9 @@ class Project < ActiveRecord::Base
 		funding_percent = (current_funding / self.funding_target * 100).round(2)
 		"#{funding_percent}%"
 	end
+
+	def filter
+		return self.rewards.select{|reward| reward.current_quantity > 0 }.sort_by(&:min_dollar_amount)
+	end
+
 end

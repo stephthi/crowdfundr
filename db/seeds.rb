@@ -21,7 +21,7 @@ default_project_one = Project.create(
 	title: "Sushi Cat",
 	description: "It's a cat made out of sushi NOT sushi made out of cat! I don't know how that rumor got started but I will not stand for it!",
 	funding_target: 1000,
-	image_url: "http://cdn.akihabaranews.com/sites/default/files/sushi_cat_update.7.png",
+	image_url: "http://i.imgur.com/ZTmQPBi.png",
 	start_date: Time.now,
 	end_date: Time.now.end_of_day.advance(months: 1),
 	owner_id: default_user_one.id)
@@ -30,7 +30,7 @@ default_project_two = Project.create(
 	title: "Plumbus",
 	description: "Everyone should have a plumbus in their home! We have perfected the painstaking process of creating them with locally sourced grumbos!",
 	funding_target: 2000,
-	image_url: "https://i.ytimg.com/vi/_Y-_13eYwBQ/maxresdefault.jpg",
+	image_url: "http://i.imgur.com/DJQizuq.png",
 	start_date: Time.now,
 	end_date: Time.now.end_of_day.advance(months: 1),
 	owner_id: default_user_one.id)
@@ -39,7 +39,7 @@ default_project_three = Project.create(
 	title: "Kanye For Prez 2020",
 	description: "Imma let you finish but Kanye would make the best president in 2020.",
 	funding_target: 50000,
-	image_url: "http://wgssgnn.com/wp-content/uploads/2015/09/Kanye-West-for-President.png",
+	image_url: "http://i.imgur.com/6BtIlCt.png",
 	start_date: Time.now,
 	end_date: Time.now.end_of_day.advance(months: 1),
 	owner_id: default_user_one.id)

@@ -1,6 +1,5 @@
 <!-- basic render of a project -->
-	<a href="/projects/<%= project.id%>"><%= image_tag project.image_url, class: "project-image"%></a>
-
+<a href="/projects/<%= project.id%>"><%= image_tag project.image_url, class: "project-image"%></a>
 
 <div class="main-page-link">
 	<%= link_to project.title, project_path(project) %>

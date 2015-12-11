@@ -18,7 +18,11 @@
     <%= f.number_field :funding_target, :class => "label-text-field" %>
   </div>
   <div>
-    <%= f.hidden_field :start_date, value: Time.new %>
+    <%= f.label :image_url, "Image URL" %>
+    <%= f.text_field :image_url %>
+  </div>
+  <div>
+    <%= f.hidden_field :start_date, value: Time.new%>
   </div>
   <div>
     <%= f.label :end_date, "End Date", :class => "label-tag"  %>

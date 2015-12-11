@@ -53,4 +53,5 @@ group :development do
 end
 
 gem 'cocoon'
+gem 'owlcarousel-rails'
 

@@ -162,7 +162,7 @@ Reward.create(
 
 Reward.create(
 	name: "Free Sandwich",
-	description: "The best lawnmower in 2015, lightweight, strong and durable.",
+	description: "The Sandwich Shoppe Spectacular. Can't go wrong with a free sandwich in you!",
 	min_dollar_amount: 100,
 	image_url: "http://images.costco-static.ca/image/media/500-431081-894__1.jpg",
 	quantity: 1000,

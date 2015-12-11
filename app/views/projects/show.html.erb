@@ -27,7 +27,7 @@
 			<div class="skillbar-title" style="background: #27ae60;"><span>Raised
 				</span></div>
 			<div class="skillbar-bar" style="background: #2ecc71;"></div>
-		<div class="skill-bar-percent"><%= @project.funding_percent %></div>
+		<div class="skill-bar-percent">$<%= @project.total_funding.to_i %> / $<%= @project.funding_target %></div>
 	</div>
 </div>
 

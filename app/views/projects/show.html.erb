@@ -30,14 +30,15 @@
 
 <%=render :partial => '/pledges/pledges' %>
 
-<h3>Pledges:</h3>
+<div class="pledges-section">
+	<h3>Pledges:</h3>
 
-
-<% @project.pledges.each do |pledge|%>
-	<% if pledge.dollar_amount != nil %>
-	<p>$<%= pledge.dollar_amount %>.00 by <%= pledge.user.username %></p>
+	<% @project.pledges.each do |pledge|%>
+		<% if pledge.dollar_amount != nil %>
+		<p>$<%= pledge.dollar_amount %>.00 by <%= pledge.user.username %></p>
+		<% end %>
 	<% end %>
-<% end %>
+</div>
 
 <div class="rewards-section">
 	<h3>Rewards:</h3>
@@ -51,15 +52,16 @@
 		</ul>
 </div>
 
+<div class="comments-section">
+	<h3>Comments:</h3>
 
-<h3>Comments:</h3>
-
-<ul>
-	<% @project.comments.each do |comment| %>
-	<li><% comment_user = comment.user.username %>
-	<p class="bold"> <%= comment_user %> Says:</p>
-	<%= comment.body_text %></li>
-<% end %>
-</ul>
+		<ul>
+			<% @project.comments.each do |comment| %>
+			<li><% comment_user = comment.user.username %>
+			<p class="bold"> <%= comment_user %> Says:</p>
+			<%= comment.body_text %></li>
+		<% end %>
+	</ul>
+</div>
 
 <%= render partial: 'comments/comment_form' %>

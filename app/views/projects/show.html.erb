@@ -47,7 +47,7 @@
 <div id="rightside" style="float:right;">
 	<!-- <div id="side-info"> -->
 		<p><%= ((@project.end_date - @project.start_date) /60/60/24).round%> Days left</p>
-		<p><%= @project.pledging_users.count%> Backers</p>
+		<p><%= @project.pledging_users.count%> <%= @project.pledging_users.count > 1 ? "Backers" : "Backer" %></p>
 	<!-- </div> -->
 
 	<!-- <div class="rewards-section"> -->

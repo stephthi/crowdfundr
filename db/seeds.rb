@@ -17,6 +17,18 @@ default_user_two = User.create(
 	password: "antimatter",
 	password_confirmation: "antimatter")
 
+default_user_three = User.create(
+	username: "Pepper Anne",
+	email: "pepper@anne.com",
+	password: "antimatter",
+	password_confirmation: "antimatter")
+
+default_user_four = User.create(
+	username: "Princess Cheesedip",
+	email: "princess@cheesedip.com",
+	password: "antimatter",
+	password_confirmation: "antimatter")
+
 default_project_one = Project.create(
 	title: "Sushi Cat",
 	description: "It's a cat made out of sushi NOT sushi made out of cat! I don't know how that rumor got started but I will not stand for it!",
@@ -30,7 +42,7 @@ default_project_two = Project.create(
 	title: "Plumbus",
 	description: "Everyone should have a plumbus in their home! We have perfected the painstaking process of creating them with locally sourced grumbos!",
 	funding_target: 2000,
-	image_url: "http://i.imgur.com/DJQizuq.png",
+	image_url: "http://i.imgur.com/n3vzps6.png",
 	start_date: Time.now,
 	end_date: Time.now.end_of_day.advance(months: 1),
 	owner_id: default_user_one.id)
@@ -42,7 +54,25 @@ default_project_three = Project.create(
 	image_url: "http://i.imgur.com/6BtIlCt.png",
 	start_date: Time.now,
 	end_date: Time.now.end_of_day.advance(months: 1),
-	owner_id: default_user_one.id)
+	owner_id: default_user_two.id)
+
+default_project_four = Project.create(
+	title: "Drone Man",
+	description: "Creating drones that are attachable to men or a manbot with a drone.",
+	funding_target: 10000,
+	image_url: "http://i.imgur.com/mShiVUT.png",
+	start_date: Time.now,
+	end_date: Time.now.end_of_day.advance(months: 1),
+	owner_id: default_user_four.id)
+
+default_project_five = Project.create(
+	title: "Landscape School",
+	description: "A serene school to learn about plants and living organisms.",
+	funding_target: 50000,
+	image_url: "http://i.imgur.com/Ryyl6qQ.jpg",
+	start_date: Time.now,
+	end_date: Time.now.end_of_day.advance(months: 1),
+	owner_id: default_user_two.id)
 
 Reward.create(
 	name: "Sushi Cat Plushie",
@@ -76,11 +106,39 @@ Reward.create(
 	quantity: 2000,
 	project_id: default_project_three.id)
 
+Reward.create(
+	name: "Mini Drone Toy",
+	description: "Perfect for you or a loved one.",
+	min_dollar_amount: 150,
+	image_url: "http://www.extremetech.com/wp-content/uploads/2014/01/Parrot-MiniDrone-is-a-smaller-and-less-capable-version-of-the-AR-drone-but-can-be-flown-by-all-ages-and-is-well-suited-to-indoor-flight.jpg",
+	quantity: 100,
+	project_id: default_project_four.id)
+
+Reward.create(
+	name: "Seeds Kit",
+	description: "A box of different seeds for your garden.",
+	min_dollar_amount: 100,
+	image_url: "http://www.krema.com/images/SunflowerRs.jpg",
+	quantity: 1000,
+	project_id: default_project_five.id)
+
+Reward.create(
+	name: "Lawnmower 5000",
+	description: "The best lawnmower in 2015, lightweight, strong and durable.",
+	min_dollar_amount: 5000,
+	image_url: "http://images.costco-static.ca/image/media/500-431081-894__1.jpg",
+	quantity: 35,
+	project_id: default_project_five.id)
 
 default_pledge_one = Pledge.create(
-	dollar_amount: 100,
+	dollar_amount: 200,
 	project_id: default_project_two.id,
-	user_id: default_user_two.id)
+	user_id: default_user_four.id)
+
+default_pledge_two = Pledge.create(
+	dollar_amount: 10000,
+	project_id: default_project_three.id,
+	user_id: default_user_three.id)
 
 Comment.create(
 	body_text: "Hi, I'm Krumbopulous Michael, I'm an assassin. I love plumbuses for their raw killing power. Hoo wee, you can't go better than a plumbus!",
@@ -91,3 +149,15 @@ Comment.create(
 	body_text: "Better than that Trump guy",
 	project_id: default_project_three.id,
 	user_id: default_user_one.id)
+
+Comment.create(
+	body_text: "Kanye for President!",
+	project_id: default_project_three.id,
+	user_id: default_user_four.id)
+
+Comment.create(
+	body_text: "I love my garden. This seems like a great idea to learn about nature.",
+	project_id: default_project_five.id,
+	user_id: default_user_one.id)
+
+

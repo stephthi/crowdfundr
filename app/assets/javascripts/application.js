@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require cocoon
 //= require skillbar
+//= require owl.carousel
 //= require_tree .
 

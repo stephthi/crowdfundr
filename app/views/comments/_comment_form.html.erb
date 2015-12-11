@@ -4,10 +4,10 @@
 
 	  <div>
 	    <p><%= f.label :comment, "Add A Comment:" %></p>
-	    <p><%= f.text_area :body_text %></p>
+	    <p><%= f.text_area :body_text, :class => 'text-box' %></p>
 	  </div>
 
-	  <%= f.submit "Comment"%>
+	  <%= f.submit "Comment", :class => 'nav-button' %>
 
 	 <% end %>
 <% end%>

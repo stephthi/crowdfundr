@@ -22,15 +22,18 @@
 	</ul>
 </div>
 
-<div class="skillbar clearfix " data-percent=<%= @project.funding_percent %>>
-	<div class="skillbar-title" style="background: #27ae60;"><span>Funding</span></div>
-	<div class="skillbar-bar" style="background: #2ecc71;"></div>
-	<div class="skill-bar-percent"><%= @project.funding_percent %></div>
+<div id="pledge-bar">
+		<div class="skillbar clearfix " data-percent=<%= @project.funding_percent %>>
+			<div class="skillbar-title" style="background: #27ae60;"><span>Raised
+				</span></div>
+			<div class="skillbar-bar" style="background: #2ecc71;"></div>
+		<div class="skill-bar-percent"><%= @project.funding_percent %></div>
+	</div>
 </div>
 
 <%=render :partial => '/pledges/pledges' %>
 
-<div class="pledges-section">
+<div class="pledges-section" style="float:left;">
 	<h3>Pledges:</h3>
 
 	<% @project.pledges.each do |pledge|%>
@@ -41,7 +44,7 @@
 </div>
 
 
-<div id="rightside">
+<div id="rightside" style="float:right;">
 	<!-- <div id="side-info"> -->
 		<p><%= ((@project.end_date - @project.start_date) /60/60/24).round%> Days left</p>
 		<p><%= @project.pledging_users.count%> Backers</p>

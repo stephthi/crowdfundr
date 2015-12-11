@@ -1,4 +1,5 @@
-<h3>Submit A Pledge</h3>
+<div align="center" class="pledge-page">
+	<h3>Submit A Pledge</h3>
 
 <%= form_for @pledge do |f| %>
 	<div class="pledges">
@@ -7,6 +8,8 @@
 
     <%= f.hidden_field :project_id %>
 
-    <%= f.submit "Submit Pledge" %>
+    <%= f.submit "Submit Pledge", :class => 'nav-button'  %>
 	<% end %>
+</div>
+
 </div>

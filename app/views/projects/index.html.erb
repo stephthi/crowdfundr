@@ -1,9 +1,9 @@
+<div class="owl-carousel">
+	<%= render @projects %>
+</div>
+
 <%= form_tag projects_path, method: :get, remote: true, id:"search" do %>
 	<%= label_tag :title, "Project Search:" %>
 	<%= text_field_tag :title, params[:title] %>
 	<%= submit_tag 'Submit' %>
 <% end %>
-
-<div id="project-list">
-	<%= render @projects %>
-</div>

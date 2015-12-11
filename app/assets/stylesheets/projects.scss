@@ -53,13 +53,35 @@ ul {
 }
 
 .rewards-section {
-	width: 50%;
+	width: 20%;
 	float: right;
   padding: 2em;
 }
+.rewards-section ul {
+  padding:0em;
+}
+
 
 #rewards-list {
 	display: block;
 	text-wrap: supress;
 }
+#rightside{
 
+  width: 40%;
+  float: right;
+  font-size: 1.4em;
+  font-weight:200;
+  padding:1em;
+  border: 2px solid black;
+  ul{
+    padding:0em;
+  }
+}
+#comment-section{
+  text-align:center;
+  width:10%;
+  input{
+    float:right;
+  }
+}

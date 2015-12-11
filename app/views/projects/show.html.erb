@@ -24,10 +24,10 @@
 
 <div id="pledge-bar">
 		<div class="skillbar clearfix " data-percent=<%= @project.funding_percent %>>
-			<div class="skillbar-title" style="background: #27ae60;"><span>Raised
+			<div class="skillbar-title" style="background: #3cb0fd; text-align: center;"><span>$<%= @project.total_funding.to_i %>
 				</span></div>
-			<div class="skillbar-bar" style="background: #2ecc71;"></div>
-		<div class="skill-bar-percent">$<%= @project.total_funding.to_i %> / $<%= @project.funding_target %></div>
+			<div class="skillbar-bar" style="background: #3cb0fd; text-align: center;"></div>
+		<div class="skill-bar-percent">$<%= @project.funding_target %></div>
 	</div>
 </div>
 

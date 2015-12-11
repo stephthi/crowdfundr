@@ -47,9 +47,11 @@ ul {
 
 //  PROJECTS SHOW
 .pledges-section {
-	width: 50%;
+	width: 49.5%;
 	float: left;
   padding: 2em;
+  border: 2px solid black;
+  margin-left: 0.3em;
 }
 
 .rewards-section {
@@ -57,6 +59,7 @@ ul {
 	float: right;
   padding: 2em;
 }
+
 .rewards-section ul {
   padding:0em;
 }
@@ -68,20 +71,22 @@ ul {
 }
 #rightside{
 
-  width: 40%;
+  width: 49.5%;
   float: right;
-  font-size: 1.4em;
+  font-size: 1em;
   font-weight:200;
+  max-height: 25%;
+  margin-right: 0.3em;
   padding:1em;
   border: 2px solid black;
   ul{
     padding:0em;
   }
 }
-#comment-section{
-  text-align:center;
-  width:10%;
-  input{
-    float:right;
-  }
+#comment-section {
+  width: 100%;
+}
+
+.blank-space {
+  height: 320px;
 }

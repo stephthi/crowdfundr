@@ -168,6 +168,14 @@ Reward.create(
 	quantity: 1000,
 	project_id: default_project_seven.id)
 
+Reward.create(
+	name: "Bitmaker Shorts",
+	description: "Stay breezy while sweaty.",
+	min_dollar_amount: 100,
+	image_url: "http://www.rustyzipper.com/full/228613.jpg",
+	quantity: 1000,
+	project_id: default_project_two.id)
+
 default_pledge_one = Pledge.create(
 	dollar_amount: 200,
 	project_id: default_project_two.id,

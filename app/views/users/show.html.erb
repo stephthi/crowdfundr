@@ -31,7 +31,11 @@
 
 	<ul>
 	<% current_user.rewards.uniq.each do |reward| %>
-		<li><%= link_to reward.name, project_path(reward.project) %></li>
+		<li>
+			<a href=<%= project_path(reward.project) %>><%= image_tag reward.image_url, class: "reward-thumbnail"%></a>
+			<%= link_to reward.name, project_path(reward.project) %>-
+			<span><%= reward.description %></span>
+		</li>
 		<% end %>
 	</ul>
 </div>

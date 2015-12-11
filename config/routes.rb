@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'projects#index'
 
+  get '/about' => 'static_pages#about'
+
   resources :projects
   resources :users
   resources :sessions

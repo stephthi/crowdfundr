@@ -1,7 +1,7 @@
 <%= form_tag projects_path, method: :get, remote: true, id:"search" do %>
 	<%= label_tag :title, "Project Search:" %>
 	<%= text_field_tag :title, params[:title] %>
-	<%= submit_tag 'Submit' %>
+	<%= submit_tag 'Submit', :class => 'nav-button'  %>
 <% end %>
 
 <div id="project-list">

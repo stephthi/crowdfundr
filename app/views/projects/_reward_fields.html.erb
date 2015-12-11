@@ -1,19 +1,19 @@
 <br>
 <div class='nested-fields'>
 	<div>
-		<%= f.label :name %>
-    <%= f.text_field :name%>
+		<%= f.label :name, :class => "label-tag" %>
+    <%= f.text_field :name, :class => "label-text-field" %>
 	</div>
 	<div>
-		<%= f.label :description %>
-    <%= f.text_field :description%>
+		<%= f.label :description, :class => "label-tag"  %>
+    <%= f.text_field :description, :class => "label-text-field" %>
 	</div>
 	<div>
-		<%= f.label :quantity %>
-    <%= f.number_field :quantity%>
+		<%= f.label :quantity, :class => "label-tag"  %>
+    <%= f.number_field :quantity, :class => "label-text-field" %>
 	</div>
 	<div>
-		<%= f.label :min_dollar_amount, "Min. Dollar Amount" %>
-    <%= f.number_field :min_dollar_amount%>
+		<%= f.label :min_dollar_amount, "Min. Dollar Amount", :class => "label-tag"  %>
+    <%= f.number_field :min_dollar_amount, :class => "label-text-field" %>
 	</div>
 </div>

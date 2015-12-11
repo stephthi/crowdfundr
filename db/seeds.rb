@@ -52,7 +52,7 @@ default_project_one = Project.create(
 
 default_project_two = Project.create(
 	title: "Bitmakers Gym",
-	description: "Too much grilled cheese for these students that it's becoming a problem.",
+	description: "Too many grilled cheeses for these students that it's becoming a problem.",
 	funding_target: 10000,
 	image_url: "http://i.imgur.com/ewlJLOS.png",
 	start_date: Time.now,

@@ -45,3 +45,21 @@ ul {
 		max-height: 300px;
 }
 
+//  PROJECTS SHOW
+.pledges-section {
+	width: 50%;
+	float: left;
+  padding: 2em;
+}
+
+.rewards-section {
+	width: 50%;
+	float: right;
+  padding: 2em;
+}
+
+#rewards-list {
+	display: block;
+	text-wrap: supress;
+}
+
